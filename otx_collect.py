@@ -120,7 +120,7 @@ def write_outputs(iocs: list[dict]):
             w.writerow({k: row.get(k, "") for k in cols})
 
 def main():
-    load_dotenv()
+    load_dotenv(encoding='utf-8-sig')
     api_key = os.getenv("OTX_API_KEY")
     if not api_key:
         raise SystemExit("Missing OTX_API_KEY in .env")
